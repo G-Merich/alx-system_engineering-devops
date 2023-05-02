@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Here is a script to restore nginx to default server port
+
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx restart
