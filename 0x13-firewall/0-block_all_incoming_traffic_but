@@ -1,6 +1,8 @@
 #!usr/bin/env bash
 # Install ufw to allow ssh, http and https and block all other traffic on web-01
 
+sudo apt update
+sudo apt install ufw
 sudo ufw enable
 sudo ufw default deny incoming
 sudo ufw allow 22
