@@ -2,6 +2,8 @@
 # Install ufw to allow ssh, http and https and block all other traffic on web-01
 
 apt install ufw
+sudo ufw enable
+sudo ufw status
 ufw disable
 ufw --force reset
 ufw default deny incoming
