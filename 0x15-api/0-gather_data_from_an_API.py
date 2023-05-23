@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 '''
 REST api to return info on user's TODO
 '''
@@ -8,12 +7,14 @@ import requests
 import sys
 
 
-def todo_func():
-    '''function that gets todo tasks and prints the completed tasks'''
-    r = requests.get('https://jsonplaceholder.typicode.com/users/{}'.format(sys.argv[1]))
+def todofunc():
+    ''' functions that gets the completed tasks '''
+    r = requests.get('https://jsonplaceholder.typicode.com/users/{}'
+                     .format(sys.argv[1]))
     new = r.json()
     name = new.get('name')
-    r = requests.get('https://jsonplaceholder.typicode.com/users/{}/todos'.format(sys.argv[1]))
+    r = requests.get('https://jsonplaceholder.typicode.com/users/{}/todos'
+                     .format(sys.argv[1]))
     new = r.json()
     size = len(new)
     titles = []
@@ -25,6 +26,8 @@ def todo_func():
 
     print("Employee {} is done with tasks({}/{}):".format(name, count, size))
     for i in range(0, count):
-        print("\t {}".format(titles[i]))
+                print("\t {}".format(titles[i]))
 
-todo_func()
+
+if __name__ == "__main__":
+    todofunc()
