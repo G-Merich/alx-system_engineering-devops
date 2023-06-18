@@ -1,4 +1,4 @@
-# Ngnix configuration
+# Nginx configuration
 # https://www.nginx.com/resources/wiki/start/
 
 server {
@@ -19,7 +19,12 @@ server {
 
 
         location /airbnb-onepage/ {
-                proxy_pass http://localhost:5000;
+                proxy_pass http://localhost:5001;
+        }
+
+        location /airbnb-dynamic/number_odd_or_even/ {
+                include proxy_params;
+                proxy_pass http://0.0.0.0:5001/number_odd_or_even/;
         }
 
         location = /404.html {
